@@ -1,7 +1,21 @@
 import TransactionsReport from './TransactionsReport';
+import TransactionModal from './TransactionModal';
+import { useState } from 'react';
 export default function TransactionsReports() {
+  const [modal, setModal] = useState(false);
+  const openModal = () => {
+    setModal(!modal);
+    const body = document.querySelector('#body');
+    body.style.position = 'fixed';
+  };
+
+  const closeModal = () => {
+    setModal(!modal);
+    const body = document.querySelector('#body');
+    body.style.position = '';
+  };
   return (
-    <div className="bg-zinc-50 p-4 font-poppins text-xs w-[1230px] ">
+    <div className="bg-zinc-50 p-4 font-poppins text-xs w-[1230px] " id="body">
       <div className="bg-white m-2 p-4 ">
         <div className="flex justify-between items-center">
           <ul className="flex gap-4 items-center">
@@ -22,7 +36,10 @@ export default function TransactionsReports() {
             <li className=" border-r pr-4">
               <img src="/arrows.svg" alt="" />
             </li>
-            <li className="flex gap-2 items-center">
+            <li
+              className="flex gap-2 items-center cursor-pointer"
+              onClick={openModal}
+            >
               <img src="/plussign.svg" alt="" width={30} height={28} />
               Export Transaction Report
               <img src="/ic_chevron.svg" alt="" width={15} height={12} />
@@ -221,6 +238,11 @@ export default function TransactionsReports() {
           </li>
         </ul>
       </div>
+      <TransactionModal
+        modal={modal}
+        openModal={openModal}
+        closeModal={closeModal}
+      />
     </div>
   );
 }

@@ -39,7 +39,7 @@ export default function Linegraph(props) {
     series: [
       {
         name: 'Approved',
-        data: [9, 12, 10, 16, 14, 15, 16],
+        data: [9, 12, 10, 2, 10, 10, 12],
         color: '#22C55E',
       },
       {
@@ -49,7 +49,7 @@ export default function Linegraph(props) {
       },
       {
         name: 'Failed',
-        data: [6, 7, 8, 5, 6, 3, 5, 8],
+        data: [9, 12, 10, 16, 14, 15, 16],
         color: '#FF0000',
       },
     ],

@@ -1,6 +1,6 @@
 import UserMenu from './UserMenu';
 import MainUser from './MainUser';
-import UserCreationModal from './UserCreationModal';
+
 export default function UsersManagement() {
   return (
     <div>
